@@ -89,8 +89,8 @@
   <a href="https://djousse-tech-md.vercel.app">
     <img src="https://img.shields.io/badge/Site-DJOUSSE%20TECH-2ECC71?style=flat-square" alt="Site" />
   </a>
-  <a href="https://www.gitskins.com/portfolio/Beaute-Gar/">
-    <img src="https://img.shields.io/badge/Portfolio-GitSkins-00b894?style=flat-square" alt="Portfolio GitSkins" />
+  <a href="https://beaute-gar.github.io/Beaute-Gar/">
+    <img src="https://img.shields.io/badge/Portfolio-beaute--gar.github.io-00b894?style=flat-square" alt="Portfolio" />
   </a>
   <a href="https://github.com/Beaute-Gar?tab=repositories">
     <img src="https://img.shields.io/badge/Tous%20les%20repos-D%C3%A9couvrir-111b26?style=flat-square" alt="Tous les repositories" />
