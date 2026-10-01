@@ -67,9 +67,24 @@
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // Balayage synchrone : affiche d'emblée tout ce qui est déjà dans le
+  // viewport. Indispensable si l'IntersectionObserver ne se déclenche pas
+  // (onglet masqué, moteur exotique) — on ne veut jamais une page vide.
+  function sweep() {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    reveals.forEach(function (el) {
+      if (el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) el.classList.add('in');
+    });
+  }
+
   if (reduced || !('IntersectionObserver' in window)) {
     revealAll();
   } else {
+    sweep();                       // immédiat : le hero apparaît dès le chargement
+    setTimeout(sweep, 1500);       // différé : après stabilisation de la mise en page
+
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -83,25 +98,15 @@
       el.style.transitionDelay = ((i % 4) * 85) + 'ms';
       io.observe(el);
     });
-
-    // Filet de sécurité : si l'IntersectionObserver tarde ou ne couvre pas
-    // tous les éléments visibles (onglet en arrière-plan, moteur exotique…),
-    // on affiche quand même tout ce qui est dans le viewport plutôt que de
-    // laisser une page vide. Le contenu hors écran reste animé au défilement.
-    setTimeout(function () {
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      reveals.forEach(function (el) {
-        if (el.classList.contains('in')) return;
-        var r = el.getBoundingClientRect();
-        if (r.top < vh && r.bottom > 0) el.classList.add('in');
-      });
-    }, 1500);
   }
 
   /* ── 3. Compteurs du hero ─────────────────── */
   var counters = document.querySelectorAll('[data-count]');
 
   function runCount(el) {
+    if (el.getAttribute('data-counted')) return;
+    el.setAttribute('data-counted', '1');
+
     var target = parseInt(el.getAttribute('data-count'), 10) || 0;
 
     if (reduced || target === 0) {
@@ -122,9 +127,26 @@
     }
 
     requestAnimationFrame(step);
+
+    // Filet : rAF ne se déclenche pas dans un onglet non rendu.
+    // On garantit la valeur finale exacte quoi qu'il arrive.
+    setTimeout(function () { el.textContent = target; }, dur + 150);
+  }
+
+  // Sans ce balayage, un échec de l'IntersectionObserver laisserait « 0 »
+  // à la place de 187 — une donnée fausse, bien pire qu'un contenu masqué.
+  function sweepCounters() {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    counters.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) runCount(el);
+    });
   }
 
   if ('IntersectionObserver' in window) {
+    sweepCounters();
+    setTimeout(sweepCounters, 1500);
+
     var co = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
