@@ -63,8 +63,12 @@
   /* ── 2. Révélation au défilement ──────────── */
   var reveals = document.querySelectorAll('.reveal');
 
-  if (reduced || !('IntersectionObserver' in window)) {
+  function revealAll() {
     reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealAll();
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -79,6 +83,13 @@
       el.style.transitionDelay = ((i % 4) * 85) + 'ms';
       io.observe(el);
     });
+
+    // Filet de sécurité : si l'IntersectionObserver n'a rien déclenché
+    // après 1,5 s (onglet en arrière-plan, moteur exotique…), on affiche
+    // quand même le contenu plutôt que de laisser une page vide.
+    setTimeout(function () {
+      if (!document.querySelector('.reveal.in')) revealAll();
+    }, 1500);
   }
 
   /* ── 3. Compteurs du hero ─────────────────── */
