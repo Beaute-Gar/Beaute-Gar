@@ -13,6 +13,7 @@
   /* ── 1. Écriture machine ──────────────────── */
   var PHRASES = [
     'Bots WhatsApp & automatisation',
+    'Applications web full-stack',
     'JavaScript · Python · TypeScript',
     'Moteurs de modération & protections',
     'Je construis des outils utiles en public'

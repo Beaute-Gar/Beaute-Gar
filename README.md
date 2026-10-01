@@ -2,8 +2,8 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=2ECC71&center=true&vCenter=true&width=640&lines=Bots+WhatsApp+%26+automatisation;JavaScript+%C2%B7+Python+%C2%B7+TypeScript;Je+construis+des+outils+utiles+en+public"
-    alt="Bots WhatsApp & automatisation — JavaScript · Python · TypeScript"
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=2ECC71&center=true&vCenter=true&width=640&lines=Applications+web+full-stack;Bots+WhatsApp+%26+automatisation;JavaScript+%C2%B7+Python+%C2%B7+TypeScript;Je+construis+des+outils+utiles+en+public"
+    alt="Applications web full-stack — Bots WhatsApp & automatisation — JavaScript · Python · TypeScript"
   />
 </p>
 
@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/badge/Cat%C3%A9gories-11-111b26?style=flat-square" alt="11 catégories" />
   <img src="https://img.shields.io/badge/Moteur-DJOUSSE%20GUARD-2ECC71?style=flat-square" alt="Moteur Guard" />
   <a href="https://github.com/Beaute-Gar?tab=repositories">
-    <img src="https://img.shields.io/badge/Repos-4-00b894?style=flat-square" alt="4 repositories" />
+    <img src="https://img.shields.io/badge/Repos-5-00b894?style=flat-square" alt="5 repositories" />
   </a>
 </p>
 
@@ -24,6 +24,7 @@
 
 | | Projet | Description | Stack |
 |:-:|---|---|:-:|
+| 🛡️ | [**Vigil**](https://github.com/Beaute-Gar/vigil) | Console de modération *Trust & Safety* — règles ordonnées par priorité, décisions traçables, appels et journal d'audit inaltérable. Front Next.js, API validée, **61 tests** et CI | `TS` |
 | 🟢 | [**DJOUSSE-TECH-MD**](https://github.com/Beaute-Gar/DJOUSSE-TECH-MD) | Bot WhatsApp intelligent — **187 commandes** dans 11 catégories, moteur de protections de groupe *DJOUSSE GUARD* (13 protections), IA Gemini, téléchargement multimédia | `JS` |
 | 📊 | [**nexus-production**](https://github.com/Beaute-Gar/nexus-production) | Nexus Analytics Pro — suite d'automatisation et d'analytics TikTok / Instagram | `TS` |
 | 🎌 | [**bnc-otaku**](https://github.com/Beaute-Gar/bnc-otaku) | BNC-Otaku — plateforme de certification otaku | `PY` |
@@ -60,11 +61,14 @@
 ## 🛠️ Stack technique
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,python,nodejs,html,css,git,github,vscode,linux,sqlite,postman" alt="JavaScript, TypeScript, Python, Node.js, HTML, CSS, Git, GitHub, VS Code, Linux, SQLite, Postman" />
+  <img src="https://skillicons.dev/icons?i=js,ts,python,nodejs,nextjs,react,tailwind,postgres,sqlite,html,css,git,github,vscode,linux,postman" alt="JavaScript, TypeScript, Python, Node.js, Next.js, React, Tailwind, PostgreSQL, SQLite, HTML, CSS, Git, GitHub, VS Code, Linux, Postman" />
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Baileys-6.7.24-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="Baileys" />
+  <img src="https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/Tests-61-passés-2ECC71?style=flat-square" alt="61 tests" />
+  <img src="https://img.shields.io/badge/CI-verte-2ECC71?style=flat-square&logo=githubactions&logoColor=white" alt="CI verte" />
   <img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemini AI" />
   <img src="https://img.shields.io/badge/MIT-License-E67E22?style=flat-square" alt="Licence MIT" />
 </p>
@@ -73,6 +77,7 @@
 
 ## 🧭 Axes de travail
 
+- **Applications web** — fronts Next.js et React, API REST typées, authentification, tests et CI
 - **Bots & automatisation** — assistants WhatsApp, pipelines de publication réseau sociaux
 - **Moteurs de modération** — protections de groupe, sanctions, journaux
 - **Intégration IA** — OCR, transcription, résumé de médias via Gemini
