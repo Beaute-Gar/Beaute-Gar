@@ -84,11 +84,17 @@
       io.observe(el);
     });
 
-    // Filet de sécurité : si l'IntersectionObserver n'a rien déclenché
-    // après 1,5 s (onglet en arrière-plan, moteur exotique…), on affiche
-    // quand même le contenu plutôt que de laisser une page vide.
+    // Filet de sécurité : si l'IntersectionObserver tarde ou ne couvre pas
+    // tous les éléments visibles (onglet en arrière-plan, moteur exotique…),
+    // on affiche quand même tout ce qui est dans le viewport plutôt que de
+    // laisser une page vide. Le contenu hors écran reste animé au défilement.
     setTimeout(function () {
-      if (!document.querySelector('.reveal.in')) revealAll();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      reveals.forEach(function (el) {
+        if (el.classList.contains('in')) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) el.classList.add('in');
+      });
     }, 1500);
   }
 
