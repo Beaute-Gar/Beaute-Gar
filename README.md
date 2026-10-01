@@ -67,7 +67,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Baileys-6.7.24-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="Baileys" />
   <img src="https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js 16" />
-  <img src="https://img.shields.io/badge/Tests-61-passés-2ECC71?style=flat-square" alt="61 tests" />
+  <img src="https://img.shields.io/badge/Tests-61%20pass%C3%A9s-2ECC71?style=flat-square" alt="61 tests" />
   <img src="https://img.shields.io/badge/CI-verte-2ECC71?style=flat-square&logo=githubactions&logoColor=white" alt="CI verte" />
   <img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemini AI" />
   <img src="https://img.shields.io/badge/MIT-License-E67E22?style=flat-square" alt="Licence MIT" />
